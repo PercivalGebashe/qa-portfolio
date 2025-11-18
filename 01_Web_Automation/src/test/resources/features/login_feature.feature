@@ -10,3 +10,19 @@ Feature: Login functionality for OrangeHRM
     And clicks on the login button
     Then the user should be directed to the Dashboard page
     And the title of the page should be OrangeHRM
+
+  @Negative
+  Scenario: Unsuccessful login with invalid details
+    Given the user is on the OrangeHRM login page
+    When the user enters the username "Admin" and password "wrongpassword"
+    And clicks on the login button
+    Then an error message "invalid credentials" should be displayed
+
+
+  @Smoke
+  Scenario: Verify logout functionality
+    Given the user is Logged in successfully
+    When the user clicks on the profile dropdown
+    And selects the Logout option
+    Then the user should be redirected to the login page
+    And the login form should be visible

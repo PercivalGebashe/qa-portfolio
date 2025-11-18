@@ -1,12 +1,11 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import pages.component.Components;
 import util.DriverFactory;
 
-public class DashboardPage extends BaseClass{
+public class DashboardPage{
 
     public DashboardPage(){
         PageFactory.initElements(DriverFactory.getDriver(), this);

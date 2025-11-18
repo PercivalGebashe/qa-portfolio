@@ -1,14 +1,16 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import util.DriverFactory;
 
 import java.util.List;
 
-public class LoginPage extends BaseClass{
+public class LoginPage{
 
     @FindBy(name = "username")
     private WebElement usernameField;
@@ -19,44 +21,51 @@ public class LoginPage extends BaseClass{
     @FindBy(css = "button[type='submit']")
     private WebElement submitButton;
 
-    private final By loginForm = By.cssSelector("form");
+    @FindBy(css = "form")
+    private WebElement loginForm;
 
-    private final By requiredField = By.xpath("//span[text()='Required']");
+    @FindBy(xpath = "//span[text()='Required']")
+    private List<WebElement> requiredField;
 
-    private final By errorMessage = By.xpath("//p[text()='Invalid credentials']");
+    @FindBy(xpath = "//p[text()='Invalid credentials']")
+    private WebElement errorMessage;
 
     public LoginPage(){
-        PageFactory.initElements(getDriver(), this);
+        PageFactory.initElements(DriverFactory.getDriver(), this);
     }
 
     public void enterUsername(String username){
-        getWait().until(ExpectedConditions.visibilityOf(usernameField));
+        DriverFactory.getWait().until(ExpectedConditions.visibilityOf(usernameField));
         this.usernameField.sendKeys(username);
     }
 
     public void enterPassword(String password){
-        getWait().until(ExpectedConditions.visibilityOf(passwordField));
+        DriverFactory.getWait().until(ExpectedConditions.visibilityOf(passwordField));
         passwordField.sendKeys(password);
     }
 
     public void submit(){
-        getWait().until(ExpectedConditions.visibilityOf(submitButton));
+        DriverFactory.getWait().until(ExpectedConditions.visibilityOf(submitButton));
         submitButton.submit();
     }
 
     public boolean isValidationMessageDisplayed(){
-        return !super.getDriver().findElements(requiredField).isEmpty();
+        return !requiredField.isEmpty();
     }
 
     public List<WebElement> getRequiredField(){
-        return super.getDriver().findElements(requiredField);
+        return requiredField;
+    }
+
+    public boolean isLoginFormVisible(){
+        return loginForm.isDisplayed();
     }
 
     public boolean isErrorMessageDisplayed(){
-        return super.getDriver().findElement(errorMessage).isDisplayed();
+        return errorMessage.isDisplayed();
     }
 
     public String getErrorMessage(){
-        return super.getDriver().findElement(errorMessage).getText();
+        return errorMessage.getText();
     }
 }

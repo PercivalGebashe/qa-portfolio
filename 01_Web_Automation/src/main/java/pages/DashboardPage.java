@@ -2,8 +2,11 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.component.Components;
 import util.DriverFactory;
+
+import java.util.Objects;
 
 public class DashboardPage{
 
@@ -12,12 +15,14 @@ public class DashboardPage{
     }
 
     public void clickProfile(){
-        WebElement userDropdown = DriverFactory.getDriver().findElement(Components.userDropdown);
-        userDropdown.click();
+        Objects.requireNonNull(DriverFactory.getWait().until(
+            ExpectedConditions.elementToBeClickable(Components.userDropdown)))
+                .click();
     }
 
     public void clickLogout(){
-        WebElement logoutOption = DriverFactory.getDriver().findElement(Components.logoutOption);
-        logoutOption.click();
+        Objects.requireNonNull(DriverFactory.getWait().until(
+            ExpectedConditions.elementToBeClickable(Components.logoutOption)))
+                .click();
     }
 }

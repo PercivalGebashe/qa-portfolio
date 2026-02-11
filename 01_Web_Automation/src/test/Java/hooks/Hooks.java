@@ -2,7 +2,7 @@ package hooks;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import util.DriverFactory;
+import utils.DriverFactory;
 
 public class Hooks {
 
@@ -10,6 +10,7 @@ public class Hooks {
     @Before
     public void setUp(){
         DriverFactory.setDriver();
+        DriverFactory.openWebsite();
     }
 
     @After

@@ -1,79 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-18T12:25:51 SAST" name="Surefire suite" finished-at="2025-11-18T12:27:45 SAST" duration-ms="114148">
+  <suite started-at="2026-02-11T17:22:02 SAST" name="Surefire suite" finished-at="2026-02-11T17:23:52 SAST" duration-ms="110076">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@53fe15ff]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@25ce9dc4]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-11-18T12:25:51 SAST" name="Surefire test" finished-at="2025-11-18T12:27:45 SAST" duration-ms="114148">
-      <class name="testRunner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.TestRunner@53fe15ff]" started-at="2025-11-18T12:25:51 SAST" name="setUpClass" finished-at="2025-11-18T12:25:52 SAST" duration-ms="270" status="PASS">
+    <test started-at="2026-02-11T17:22:02 SAST" name="Surefire test" finished-at="2026-02-11T17:23:52 SAST" duration-ms="110076">
+      <class name="runners.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.TestRunner@25ce9dc4]" started-at="2026-02-11T17:22:02 SAST" name="setUpClass" finished-at="2026-02-11T17:22:03 SAST" duration-ms="463" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@68ef01a5]]>
+                <![CDATA[org.testng.TestRunner@18dd5ed3]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@53fe15ff]" started-at="2025-11-18T12:25:52 SAST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-11-18T12:26:27 SAST" duration-ms="35161" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@25ce9dc4]" started-at="2026-02-11T17:22:03 SAST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-02-11T17:23:52 SAST" duration-ms="109131" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Successful login with valid credentials"]]>
+                <![CDATA["Successfully hire a candidate through the recruitment workflow"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Login functionality for OrangeHRM"]]>
+                <![CDATA["End-to-End Hiring Process"]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[oxd-select-dropdown]//div[oxd-select-option][normalize-space()='some title'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 11464, moz:profile: C:\Users\perci\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: e1318853-e7bf-4d94-b358-c0e5a30904de]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[oxd-select-dropdown]//div[oxd-select-option][normalize-space()='some title'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 11464, moz:profile: C:\Users\perci\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: e1318853-e7bf-4d94-b358-c0e5a30904de
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at utils.DriverFactory.findBy(DriverFactory.java:132)
+at pages.RecruitmentAddVacancyPage.getSelectOption(RecruitmentAddVacancyPage.java:49)
+at pages.RecruitmentAddVacancyPage.createVacancy(RecruitmentAddVacancyPage.java:34)
+at stepDefinitions.VacancySteps.createVacancy(VacancySteps.java:27)
+at ✽.the admin creates a vacancy(file:///C:/Users/perci/OneDrive/Documents/personal_projects/portfolio/qa-portfolio/01_Web_Automation/./src/test/resources/features/hiring_process.feature:13)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@53fe15ff]" started-at="2025-11-18T12:26:27 SAST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-11-18T12:26:51 SAST" duration-ms="24034" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Unsuccessful login with invalid details"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Login functionality for OrangeHRM"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@53fe15ff]" started-at="2025-11-18T12:26:51 SAST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-11-18T12:27:45 SAST" duration-ms="54478" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Verify logout functionality"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Login functionality for OrangeHRM"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.TestRunner@53fe15ff]" started-at="2025-11-18T12:27:45 SAST" name="tearDownClass" finished-at="2025-11-18T12:27:45 SAST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.TestRunner@25ce9dc4]" started-at="2026-02-11T17:23:52 SAST" name="tearDownClass" finished-at="2026-02-11T17:23:52 SAST" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- testRunner.TestRunner -->
+      </class> <!-- runners.TestRunner -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

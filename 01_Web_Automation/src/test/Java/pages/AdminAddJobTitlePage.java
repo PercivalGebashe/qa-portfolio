@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import testdata.JobTitle;
 import utils.DriverFactory;
 
 public class AdminAddJobTitlePage {
@@ -17,8 +18,8 @@ public class AdminAddJobTitlePage {
         PageFactory.initElements(DriverFactory.getDriver(), this);
     }
 
-    public void saveJobCategory(String name){
-        DriverFactory.type(inputTextFieldJobCategoryName, name);
+    public void saveJobCategory(JobTitle title){
+        DriverFactory.type(inputTextFieldJobCategoryName, title.getJobTitle());
         DriverFactory.click(buttonSaveJobTitle);
     }
 }

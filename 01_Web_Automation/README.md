@@ -305,6 +305,9 @@ Out of scope (for now):
 ## 7. Highlights
 - Implemented Page Object Model (POM)
 - Driver factory
+- This framework validates HR recruitment workflows using state-based assertions rather than UI-only checks.
+- Test data is externalized to JSON and deserialized into domain objects, enabling clean separation between test logic and business data.
+- Generate a run-scoped unique reference and materialize test data from JSON templates, ensuring deterministic E2E flows and avoiding data collisions on shared environments.
 - Test context for quick page initialisation
 - Auto-generated HTML reports
 

@@ -7,6 +7,12 @@ import utils.DriverFactory;
 
 public class AdminPage {
 
+    @FindBy(xpath = "//nav[@aria-label = 'Topbar Menu']//li[normalize-space()='User Management']")
+    private WebElement userManagementMenu;
+
+    @FindBy(xpath = "//a[normalize-space()='Users']")
+    private WebElement users;
+
     @FindBy(xpath = "//nav[@aria-label = 'Topbar Menu']//li[normalize-space()='Job']")
     private WebElement jobMenu;
 
@@ -19,6 +25,11 @@ public class AdminPage {
 
     public AdminPage(){
         PageFactory.initElements(DriverFactory.getDriver(), this);
+    }
+
+    public void openUserManagement(){
+        DriverFactory.click(userManagementMenu);
+        DriverFactory.click(users);
     }
 
     public void openJobTitle(){

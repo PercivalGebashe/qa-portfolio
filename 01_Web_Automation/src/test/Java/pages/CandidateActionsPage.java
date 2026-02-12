@@ -7,6 +7,9 @@ import utils.DriverFactory;
 
 public class CandidateActionsPage {
 
+    @FindBy(xpath = "//div[@class='orangehrm-recruitment-status']//p")
+    private WebElement currentStatus;
+
     @FindBy(xpath = "//button[normalize-space()='Shortlist']")
     private WebElement buttonShortlist;
 
@@ -45,5 +48,9 @@ public class CandidateActionsPage {
 
     public void hireCandidate() {
         DriverFactory.click(buttonHire);
+    }
+
+    public String getCurrentStatus() {
+        return DriverFactory.getText(currentStatus);
     }
 }

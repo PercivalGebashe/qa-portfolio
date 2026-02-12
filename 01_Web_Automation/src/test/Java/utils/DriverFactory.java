@@ -135,7 +135,4 @@ public class DriverFactory {
     public static void openWebsite(){
         driver.get(properties.getProperty("website"));
     }
-
-    public static boolean isVisible(By dropdownMenu) {
-    }
 }

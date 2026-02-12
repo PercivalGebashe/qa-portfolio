@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import testdata.Candidate;
 import utils.DriverFactory;
 
 public class RecruitmentAddCandidatePage {
@@ -28,12 +29,12 @@ public class RecruitmentAddCandidatePage {
         PageFactory.initElements(DriverFactory.getDriver(), this);
     }
 
-    public void saveCandidate(String firstName, String lastName, String vacancyName, String email){
-        DriverFactory.type(inputTextFieldFirstName, firstName);
-        DriverFactory.type(inputTextFieldLastName, lastName);
-//        DriverFactory.click(selectButton);
-//        DriverFactory.click(getSelectOption(vacancyName));
-        DriverFactory.type(inputTextFieldEmail, email);
+    public void saveCandidate(Candidate candidate){
+        DriverFactory.type(inputTextFieldFirstName, candidate.getFirstName());
+        DriverFactory.type(inputTextFieldLastName, candidate.getLastName());
+        DriverFactory.click(selectButton);
+        DriverFactory.click(getSelectOption(candidate.getVacancyName()));
+        DriverFactory.type(inputTextFieldEmail, candidate.getEmail());
         DriverFactory.submit(buttonSaveCandidate);
 
     }

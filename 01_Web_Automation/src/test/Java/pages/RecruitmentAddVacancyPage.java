@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import testdata.Vacancy;
 import utils.DriverFactory;
 
 public class RecruitmentAddVacancyPage {
@@ -27,13 +28,13 @@ public class RecruitmentAddVacancyPage {
         PageFactory.initElements(DriverFactory.getDriver(), this);
     }
 
-    public void createVacancy(String vacancyName, String jobTitle, String hiringManager, String numberOfPositions){
-        DriverFactory.type(inputTextFieldVacancyName, vacancyName);
+    public void createVacancy(Vacancy vacancy){
+        DriverFactory.type(inputTextFieldVacancyName, vacancy.getVacancyName());
         DriverFactory.click(selectJobTitleButton);
-        DriverFactory.click(getSelectOption(jobTitle));
-        DriverFactory.type(inputTextFieldHiringManager, hiringManager);
-        DriverFactory.click(getHiringManager(hiringManager));
-        DriverFactory.type(inputTextFieldNumberOfOpenPositions, numberOfPositions);
+        DriverFactory.click(getSelectOption(vacancy.getJobTitle()));
+        DriverFactory.type(inputTextFieldHiringManager, vacancy.getHiringManager());
+        DriverFactory.click(getHiringManager(vacancy.getHiringManager()));
+        DriverFactory.type(inputTextFieldNumberOfOpenPositions, vacancy.getNumberOfPositions());
         DriverFactory.submit(buttonSaveVacancy);
     }
 

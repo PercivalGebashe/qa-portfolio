@@ -60,4 +60,8 @@ public class TestContext {
     public Components components() {
         return new Components();
     }
+
+    public AdminAddUser addUserPage() {
+        return new AdminAddUser();
+    }
 }

@@ -15,6 +15,11 @@ public class CandidateSteps {
         this.testRunContext = testRunContext;
     }
 
+    public CandidateSteps(){
+        testRunContext = new TestRunContext();
+        context = new TestContext();
+    }
+
     @When("the admin adds a candidate")
     public void addCandidate(){
         Candidate candidate = Candidate.fromJson("candidate_happy_path.json", testRunContext);

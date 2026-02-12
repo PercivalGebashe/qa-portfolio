@@ -19,6 +19,11 @@ public class LoginSteps {
         context = new TestContext();
     }
 
+    public LoginSteps(){
+        context = new TestContext();
+        testRunContext = new TestRunContext();
+    }
+
     @Given("the admin user is logged into the system")
     public void adminUserIsLoggedIn(){
         DriverFactory.openWebsite();

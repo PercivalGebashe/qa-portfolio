@@ -18,6 +18,10 @@ public class AdminUserSteps {
         this.testRunContext = testRunContext;
         context = new TestContext();
     }
+    public AdminUserSteps(){
+        testRunContext = new TestRunContext();
+        context = new TestContext();
+    }
 
     @When("the admin creates a admin user")
     public void createAdminUser(){

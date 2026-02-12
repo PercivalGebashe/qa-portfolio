@@ -1,0 +1,7 @@
+{
+  "employeeName": "User {{REF}}",
+  "username": "admin_{{REF}}",
+  "password": "Admin@123",
+  "role": "Admin",
+  "status": "Enabled"
+}

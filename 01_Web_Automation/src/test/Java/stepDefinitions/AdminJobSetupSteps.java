@@ -10,7 +10,12 @@ public class AdminJobSetupSteps {
     private final TestContext context;
     private final TestRunContext testRunContext;
 
-    public AdminJobSetupSteps(){
+    public AdminJobSetupSteps(TestRunContext testRunContext){
+        this.testRunContext = testRunContext;
+        context = new TestContext();
+    }
+
+    public AdminJobSetupSteps() {
         testRunContext = new TestRunContext();
         context = new TestContext();
     }

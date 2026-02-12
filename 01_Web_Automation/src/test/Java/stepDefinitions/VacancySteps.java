@@ -10,6 +10,11 @@ public class VacancySteps {
     private final TestContext context;
     private final TestRunContext testRunContext;
 
+    public VacancySteps(TestRunContext testRunContext){
+        this.testRunContext = testRunContext;
+        context = new TestContext();
+    }
+
     public VacancySteps(){
         context = new TestContext();
         testRunContext = new TestRunContext();

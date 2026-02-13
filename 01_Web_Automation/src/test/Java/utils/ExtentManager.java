@@ -9,7 +9,7 @@ public class ExtentManager {
 
     public static ExtentReports getInstance(){
         if (extent == null) {
-            ExtentSparkReporter reporter = new ExtentSparkReporter("reports/extent/extent-report" +
+            ExtentSparkReporter reporter = new ExtentSparkReporter("reports/extent/extent-report_" +
                     DriverFactory.getCurrentTimeStamp() + ".html");
 
             reporter.config().setReportName("End To End Orange HRM Hiring Happy Path");

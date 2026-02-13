@@ -2,12 +2,10 @@ package utils;
 
 import org.openqa.selenium.*;
 
-import java.util.Base64;
-
 public class ScreenshotUtils {
 
-    public static String captureBase64(WebDriver driver) {
-        return ((TakesScreenshot) driver)
+    public static String captureBase64() {
+        return ((TakesScreenshot) DriverFactory.getDriver())
                 .getScreenshotAs(OutputType.BASE64);
     }
 }

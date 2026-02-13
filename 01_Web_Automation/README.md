@@ -326,8 +326,14 @@ The report includes:
 * Screenshot evidence for failed steps 
 * Execution timestamps
 
-**SampleReport**
-[`Report`](reports/extent/extent-report.html)
+**Passing Test Full Sample [Report](reports/extent/extent-report_2026_02_13_15_28_14.html)**
+
+
+<img src="screenshots/passing.png" alt="My image" width="400"/>
+
+**Failing Test Full Sample [Report](reports/extent/extent-report_2026_02_13_15_47_57.html)**
+
+<img src="screenshots/failing.png" alt="My image" width="400"/>
 
 ---
 

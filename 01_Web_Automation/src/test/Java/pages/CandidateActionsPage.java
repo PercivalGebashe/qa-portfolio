@@ -56,7 +56,6 @@ public class CandidateActionsPage {
         DriverFactory.type(inputTextFieldInterviewTitle, interview.getTitle());
         DriverFactory.type(inputTextFieldInterviewer, interview.getInterviewer());
         DriverFactory.click(getInterviewer(interview.getInterviewer()));
-//        DriverFactory.click(inputFieldInterviewDate);
         DriverFactory.type(inputFieldInterviewDate, interview.getDate());
         inputFieldInterviewDate.sendKeys(Keys.TAB);
         saveAction();

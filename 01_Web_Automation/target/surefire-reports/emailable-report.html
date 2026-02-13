@@ -9,25 +9,25 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Surefire suite</th></tr>
-<tr><td><a href="#t0">Surefire test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">86 520</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">225 337</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">runners.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1770913441959</td><td rowspan="1">86101</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">runners.TestRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1770986647485</td><td rowspan="1">224982</td></tr></tbody>
 </table>
-<h2>Surefire test</h2><h3 id="m0">runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Successfully hire a candidate through the recruitment workflow&quot;</td><td>&quot;End-to-End Hiring Process&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //form//div[contains(@class, &apos;oxd-input-group&apos;)][normalize-space()=&apos;Employee Id&apos;]//input&apos; (tried for 30 second(s) with 500 milliseconds interval)
+<h2>Surefire test</h2><h3 id="m0">runners.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Successfully hire a candidate through the recruitment workflow&quot;</td><td>&quot;End-to-End Hiring Process&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //div[@class=&apos;orangehrm-recruitment-status&apos;]//p&apos; (tried for 30 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at utils.DriverFactory.getAttribute(DriverFactory.java:141)
-	at pages.PimAddEmployeePage.getEmployeeId(PimAddEmployeePage.java:35)
-	at stepDefinitions.PimEmployeeSetupSteps.createEmployee(PimEmployeeSetupSteps.java:41)
-	at ✽.the admin creates an employee(file:///C:/Users/perci/OneDrive/Documents/personal_projects/portfolio/qa-portfolio/01_Web_Automation/./src/test/resources/features/hiring_process.feature:8)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //form//div[contains(@class, &apos;oxd-input-group&apos;)][normalize-space()=&apos;Employee Id&apos;]//input
+	at utils.DriverFactory.getText(DriverFactory.java:134)
+	at pages.CandidateActionsPage.getCurrentStatus(CandidateActionsPage.java:81)
+	at stepDefinitions.CandidateStatusSteps.candidateApplicationStatus(CandidateStatusSteps.java:18)
+	at ✽.the candidate application status should be &quot;Shortlisted&quot;(file:///C:/Users/perci/OneDrive/Documents/personal_projects/portfolio/qa-portfolio/01_Web_Automation/./src/test/resources/features/hiring_process.feature:17)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //div[@class=&apos;orangehrm-recruitment-status&apos;]//p
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [d1237d1b-cffa-4e72-adcf-24d2f32f40c1, findElement {using=xpath, value=//form//div[contains(@class, &apos;oxd-input-group&apos;)][normalize-space()=&apos;Employee Id&apos;]//input}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 17728, moz:profile: C:\Users\perci\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: d1237d1b-cffa-4e72-adcf-24d2f32f40c1
+Command: [46cedfb8-e78c-42c1-ac11-d8297870cfc2, findElement {using=xpath, value=//div[@class=&apos;orangehrm-recruitment-status&apos;]//p}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 17600, moz:profile: C:\Users\perci\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 46cedfb8-e78c-42c1-ac11-d8297870cfc2
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -41,7 +41,7 @@ Session ID: d1237d1b-cffa-4e72-adcf-24d2f32f40c1
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.isDisplayed(Unknown Source)
 	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:308)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:294)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:291)

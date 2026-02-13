@@ -1,23 +1,23 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 87.70 s <<< FAILURE! -- in TestSuite
-runners.TestRunner.runScenario["Successfully hire a candidate through the recruitment workflow", "End-to-End Hiring Process"](1) -- Time elapsed: 86.22 s <<< FAILURE!
-org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //form//div[contains(@class, 'oxd-input-group')][normalize-space()='Employee Id']//input' (tried for 30 second(s) with 500 milliseconds interval)
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 226.1 s <<< FAILURE! -- in TestSuite
+runners.TestRunner.runScenario["Successfully hire a candidate through the recruitment workflow", "End-to-End Hiring Process"](1) -- Time elapsed: 225.1 s <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@class='orangehrm-recruitment-status']//p' (tried for 30 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at utils.DriverFactory.getAttribute(DriverFactory.java:141)
-	at pages.PimAddEmployeePage.getEmployeeId(PimAddEmployeePage.java:35)
-	at stepDefinitions.PimEmployeeSetupSteps.createEmployee(PimEmployeeSetupSteps.java:41)
-	at ✽.the admin creates an employee(file:///C:/Users/perci/OneDrive/Documents/personal_projects/portfolio/qa-portfolio/01_Web_Automation/./src/test/resources/features/hiring_process.feature:8)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //form//div[contains(@class, 'oxd-input-group')][normalize-space()='Employee Id']//input
+	at utils.DriverFactory.getText(DriverFactory.java:134)
+	at pages.CandidateActionsPage.getCurrentStatus(CandidateActionsPage.java:81)
+	at stepDefinitions.CandidateStatusSteps.candidateApplicationStatus(CandidateStatusSteps.java:18)
+	at ✽.the candidate application status should be "Shortlisted"(file:///C:/Users/perci/OneDrive/Documents/personal_projects/portfolio/qa-portfolio/01_Web_Automation/./src/test/resources/features/hiring_process.feature:17)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //div[@class='orangehrm-recruitment-status']//p
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: '4.38.0', revision: '6b412e825c*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [d1237d1b-cffa-4e72-adcf-24d2f32f40c1, findElement {using=xpath, value=//form//div[contains(@class, 'oxd-input-group')][normalize-space()='Employee Id']//input}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 17728, moz:profile: C:\Users\perci\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: d1237d1b-cffa-4e72-adcf-24d2f32f40c1
+Command: [46cedfb8-e78c-42c1-ac11-d8297870cfc2, findElement {using=xpath, value=//div[@class='orangehrm-recruitment-status']//p}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 17600, moz:profile: C:\Users\perci\AppData\Loca..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 46cedfb8-e78c-42c1-ac11-d8297870cfc2
 	at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
@@ -35,7 +35,7 @@ Session ID: d1237d1b-cffa-4e72-adcf-24d2f32f40c1
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.isDisplayed(Unknown Source)
 	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:308)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:294)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:291)

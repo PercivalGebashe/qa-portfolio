@@ -7,7 +7,6 @@ pages\RecruitmentAddVacancyPage.class
 utils\ExtentTestManager.class
 pages\AdminAddJobCategoryPage.class
 pages\AdminPage.class
-listeners\CustomerListener.class
 pages\component\Components.class
 utils\DriverFactory.class
 runners\TestRunner.class

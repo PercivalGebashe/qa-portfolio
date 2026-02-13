@@ -19,11 +19,6 @@ public class LoginSteps {
         context = new TestContext();
     }
 
-    public LoginSteps(){
-        context = new TestContext();
-        testRunContext = new TestRunContext();
-    }
-
     @Given("the admin user is logged into the system")
     public void adminUserIsLoggedIn(){
         DriverFactory.openWebsite();
@@ -35,5 +30,9 @@ public class LoginSteps {
     @Given("the created admin user is logged into the system")
     public void createdAdminUserIsLoggedIn(){
         AdminUser user = AdminUser.fromJson("admin_user_template.json", testRunContext);
+        LoginPage page = context.loginPage();
+        assertTrue(page.isLoginFormVisible(), "Login form is not visible");
+        page.login(user.getUsername(), user.getPassword());
+
     }
 }

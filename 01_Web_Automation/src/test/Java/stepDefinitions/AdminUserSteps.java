@@ -5,9 +5,6 @@ import context.TestRunContext;
 import io.cucumber.java.en.When;
 import pages.component.Components;
 import testdata.AdminUser;
-import utils.JsonDataLoader;
-
-import java.awt.*;
 
 public class AdminUserSteps {
 
@@ -18,17 +15,20 @@ public class AdminUserSteps {
         this.testRunContext = testRunContext;
         context = new TestContext();
     }
-    public AdminUserSteps(){
-        testRunContext = new TestRunContext();
-        context = new TestContext();
-    }
 
     @When("the admin creates a admin user")
     public void createAdminUser(){
         AdminUser user = AdminUser.fromJson("admin_user_template.json", testRunContext);
         Components component = context.components();
-        component.clickTab("Admin");
+
+        component.clickTab("admin");
         context.adminPage().openUserManagement();
+        context.userManagementPage().addUser();
         context.addUserPage().saveUser(user);
+        try {
+            Thread.sleep(15000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

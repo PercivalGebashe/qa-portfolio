@@ -36,6 +36,15 @@ public class AdminAddUser {
         PageFactory.initElements(DriverFactory.getDriver(), this);
     }
 
+    private void selectUser(String name){
+        DriverFactory.type(inputTextFieldEmployeeName, name);
+        WebElement actualUser = DriverFactory.findBy(By.xpath(
+            "//div[@class='oxd-autocomplete-option'][normalize-space()='" + name + "']"
+        ));
+
+        DriverFactory.click(actualUser);
+    }
+
     private void selectUserType(String type){
         DriverFactory.click(buttonSelectUserRole);
         WebElement userType = DriverFactory.findBy(By.xpath("//div[@class='oxd-select-option']" +
@@ -44,18 +53,16 @@ public class AdminAddUser {
     }
 
     private void selectUserStatus(String status){
-        DriverFactory.click(buttonSelectUserRole);
+        DriverFactory.click(buttonSelectUserStatus);
         WebElement userType = DriverFactory.findBy(By.xpath("//div[@class='oxd-select-option']" +
                 "[normalize-space()='" + status + "']"));
         DriverFactory.click(userType);
     }
 
     public void saveUser(AdminUser user){
-        DriverFactory.click(buttonSelectUserRole);
         selectUserType(user.getRole());
-        DriverFactory.type(inputTextFieldEmployeeName, user.getEmployeeName());
-        DriverFactory.click(buttonSelectUserStatus);
-        selectUserType(user.getStatus());
+        selectUser(user.getEmployeeFirstName() + " " + user.getEmployeeLastName());
+        selectUserStatus(user.getStatus());
         DriverFactory.type(inputTextFieldEmployeeUserName, user.getUsername());
         DriverFactory.type(inputTextFieldPassword, user.getPassword());
         DriverFactory.type(inputTextFieldConfirmPassword, user.getPassword());

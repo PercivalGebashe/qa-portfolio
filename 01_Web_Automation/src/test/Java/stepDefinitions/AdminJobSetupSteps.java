@@ -15,11 +15,6 @@ public class AdminJobSetupSteps {
         context = new TestContext();
     }
 
-    public AdminJobSetupSteps() {
-        testRunContext = new TestRunContext();
-        context = new TestContext();
-    }
-
     @When("the admin creates a job category {string}")
     public void createJobCategory(String category){
         context.components().clickTab("admin");
@@ -32,8 +27,13 @@ public class AdminJobSetupSteps {
     public void createJobTitle(){
         JobTitle title = JobTitle.fromJson("job_title_happy_path.json", testRunContext);
         context.components().clickTab("admin");
-        context.adminPage().openJobCategories();
+        context.adminPage().openJobTitle();
         context.jobTitlesPage().addJobTitle();
-        context.addJobTitlePage().saveJobCategory(title);
+        context.addJobTitlePage().saveJobTitle(title);
+        try {
+            Thread.sleep(15000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

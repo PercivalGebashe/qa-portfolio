@@ -18,7 +18,7 @@ public class AdminAddJobTitlePage {
         PageFactory.initElements(DriverFactory.getDriver(), this);
     }
 
-    public void saveJobCategory(JobTitle title){
+    public void saveJobTitle(JobTitle title){
         DriverFactory.type(inputTextFieldJobCategoryName, title.getJobTitle());
         DriverFactory.click(buttonSaveJobTitle);
     }

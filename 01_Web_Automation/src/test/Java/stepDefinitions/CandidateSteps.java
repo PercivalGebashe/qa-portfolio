@@ -15,16 +15,17 @@ public class CandidateSteps {
         this.testRunContext = testRunContext;
     }
 
-    public CandidateSteps(){
-        testRunContext = new TestRunContext();
-        context = new TestContext();
-    }
-
     @When("the admin adds a candidate")
     public void addCandidate(){
         Candidate candidate = Candidate.fromJson("candidate_happy_path.json", testRunContext);
         context.components().clickTab("recruitment");
         context.recruitmentPage().openCandidatesPage();
+        context.recruitmentPage().addCandidate();
         context.addCandidatePage().saveCandidate(candidate);
+        try {
+            Thread.sleep(15000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

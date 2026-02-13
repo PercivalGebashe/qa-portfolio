@@ -15,11 +15,6 @@ public class VacancySteps {
         context = new TestContext();
     }
 
-    public VacancySteps(){
-        context = new TestContext();
-        testRunContext = new TestRunContext();
-    }
-
     @When("the admin creates a vacancy")
     public void createVacancy(){
         Vacancy vacancy = Vacancy.fromJson("vacancy_happy_path.json", testRunContext);
@@ -28,5 +23,10 @@ public class VacancySteps {
         context.recruitmentPage().openVacancyPage();
         context.vacancyPage().addVacancy();
         context.addVacancyPage().createVacancy(vacancy);
+        try {
+            Thread.sleep(15000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

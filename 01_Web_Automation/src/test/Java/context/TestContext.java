@@ -64,4 +64,24 @@ public class TestContext {
     public AdminAddUser addUserPage() {
         return new AdminAddUser();
     }
+
+    public AdminUserManagementPage userManagementPage() {
+        return new AdminUserManagementPage();
+    }
+
+    public PimPage pimPage() {
+        return new PimPage();
+    }
+
+    public PimAddEmployeePage addEmployeePage() {
+        return new PimAddEmployeePage();
+    }
+
+    public PimEmployeeListPage employeeListPage() {
+        return new PimEmployeeListPage();
+    }
+
+    public PimPersonalDetailsPage personDetailsPage() {
+        return new PimPersonalDetailsPage();
+    }
 }

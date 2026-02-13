@@ -4,7 +4,8 @@ import context.TestRunContext;
 import utils.JsonDataLoader;
 
 public class AdminUser {
-    private String employeeName;
+    private String employeeFirstName;
+    private String employeeLastName;
     private String username;
     private String password;
     private String role;
@@ -14,16 +15,24 @@ public class AdminUser {
 
     }
 
-    public String getEmployeeName() {
-        return employeeName;
+    public String getEmployeeFirstName() {
+        return employeeFirstName;
     }
 
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+    public void setEmployeeFirstName(String employeeFirstName) {
+        this.employeeFirstName = employeeFirstName;
     }
 
     public String getUsername() {
         return username;
+    }
+
+    public String getEmployeeLastName() {
+        return employeeLastName;
+    }
+
+    public void setEmployeeLastName(String employeeLastName) {
+        this.employeeLastName = employeeLastName;
     }
 
     public void setUsername(String username) {

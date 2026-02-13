@@ -9,21 +9,20 @@ public class Hooks {
 
     private final TestRunContext testRunContext;
 
-    public Hooks(){
-        testRunContext = new TestRunContext();
+    public Hooks(TestRunContext testRunContext){
+        this.testRunContext = testRunContext;
     }
 
     @Before(order = 0)
     public void logReference(){
-        System.out.println("Test run Reference: " + testRunContext.getReference());
     }
 
-    @Before
+    @Before(order = 1)
     public void setUp(){
         DriverFactory.setDriver();
     }
 
-    @After
+    @After(order = 10)
     public void tearDown(){
         DriverFactory.tearDownDriver();
     }

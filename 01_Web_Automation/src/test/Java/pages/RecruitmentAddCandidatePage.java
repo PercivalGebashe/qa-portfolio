@@ -41,7 +41,6 @@ public class RecruitmentAddCandidatePage {
 
     private WebElement getSelectOption(String optionName){
         return DriverFactory
-            .findBy(By.xpath("//div[oxd-select-dropdown]//div[oxd-select-option][normalize-space()='" +
-                optionName + "']"));
+            .findBy(By.xpath("//form//div[@class='oxd-select-option'][normalize-space()='" + optionName + "']"));
     }
 }

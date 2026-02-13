@@ -1,5 +1,6 @@
 {
-  "employeeName": "User {{REF}}",
+  "employeeFirstName": "Robert",
+  "employeeLastName": "Kelly {{REF}}",
   "username": "admin_{{REF}}",
   "password": "Admin@123",
   "role": "Admin",

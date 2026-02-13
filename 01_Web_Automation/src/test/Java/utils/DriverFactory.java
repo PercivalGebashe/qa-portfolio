@@ -1,9 +1,7 @@
 package utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -17,7 +15,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Objects;
 import java.util.Properties;
 
@@ -32,7 +32,6 @@ public class DriverFactory {
         loadProperties();
         String browser = getProperty("browser");
         boolean isHeadless = Boolean.parseBoolean(getProperty("headless"));
-        System.out.println("Browser: " + browser);
 
         switch (browser.toLowerCase()){
             case "chrome":
@@ -107,8 +106,22 @@ public class DriverFactory {
     }
 
     public static void click(WebElement element){
-        Objects.requireNonNull(wait.until(ExpectedConditions.visibilityOf(element)))
-                .click();
+        wait.until(d ->
+                Objects.equals(((JavascriptExecutor) d)
+                        .executeScript("return document.readyState"), "complete")
+        );
+
+        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+
+        try {
+            element.click();
+        }
+        catch (ElementClickInterceptedException e) {
+
+            ((JavascriptExecutor) driver).executeScript(
+                    "arguments[0].click();", element);
+        }
     }
 
     public static void type(WebElement element, String value){
@@ -123,10 +136,25 @@ public class DriverFactory {
     }
 
 
-    public static void submit(WebElement submitButton) {
-        Objects.requireNonNull(DriverFactory.getWait().until(ExpectedConditions.visibilityOf(submitButton)))
-                .submit();
+    public static void submit(WebElement element) {
+        wait.until(d ->
+                Objects.equals(((JavascriptExecutor) d)
+                        .executeScript("return document.readyState"), "complete")
+        );
+
+        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+
+        try {
+            element.submit();
+        }
+        catch (ElementClickInterceptedException e) {
+
+            ((JavascriptExecutor) driver).executeScript(
+                    "arguments[0].click();", element);
+        }
     }
+
 
     public static WebElement findBy(By locator){
         return Objects.requireNonNull(wait.until(ExpectedConditions.visibilityOfElementLocated(locator)));
@@ -134,5 +162,16 @@ public class DriverFactory {
 
     public static void openWebsite(){
         driver.get(properties.getProperty("website"));
+    }
+
+    public static String getAttribute(WebElement webElement, String value) {
+        return Objects.requireNonNull(wait.until(ExpectedConditions.visibilityOf(webElement)))
+                .getAttribute(value);
+    }
+
+    public static String getCurrentTimeStamp(){
+        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+        Date now = new Date();
+        return sdfDate.format(now);
     }
 }

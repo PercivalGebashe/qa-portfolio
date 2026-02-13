@@ -41,12 +41,13 @@ public class RecruitmentAddVacancyPage {
 
     private WebElement getHiringManager(String name){
         return DriverFactory
-            .findBy(By.xpath("//form//div[normalize-space()='" + name +"']"));
+            .findBy(By.xpath("//form//div[contains(@class, 'oxd-autocomplete-option')]" +
+                "[normalize-space()='" + name + "']"));
     }
 
     private WebElement getSelectOption(String optionName){
         return DriverFactory
-                .findBy(By.xpath("//div[oxd-select-dropdown]//div[oxd-select-option][normalize-space()='" +
+                .findBy(By.xpath("//div[@class='oxd-select-option'][normalize-space()='" +
                         optionName + "']"));
     }
 

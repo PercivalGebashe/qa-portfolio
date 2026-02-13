@@ -3,5 +3,5 @@
   "firstName": "John",
   "lastName": "Doe {{REF}}",
   "email": "john.doe@testmail.com",
-  "vacancy": "Contingent {{REF}}"
+  "vacancyName": "Contingent {{REF}}"
 }

@@ -14,6 +14,9 @@ public class RecruitmentPage {
     @FindBy(xpath = "//a[normalize-space()='Candidates']")
     private WebElement candidates;
 
+    @FindBy(xpath = "//button[normalize-space()='Add']")
+    private WebElement buttonAddCandidate;
+
     public RecruitmentPage(){
         PageFactory.initElements(DriverFactory.getDriver(), this);
     }
@@ -25,5 +28,9 @@ public class RecruitmentPage {
 
     public void openCandidatesPage(){
         DriverFactory.click(candidates);
+    }
+
+    public void addCandidate(){
+        DriverFactory.click(buttonAddCandidate);
     }
 }

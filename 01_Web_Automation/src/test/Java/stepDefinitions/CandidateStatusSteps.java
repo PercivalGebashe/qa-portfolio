@@ -15,12 +15,12 @@ public class CandidateStatusSteps {
 
     @Then("the candidate application status should be {string}")
     public void candidateApplicationStatus(String expectedStatus){
-        String actualStatus = context.candidateActionsPage().getCurrentStatus();
+        String actualStatus = context.candidateActionsPage().getCurrentStatus().split(":")[1].strip();
 
         assertEquals(
-                actualStatus,
-                expectedStatus,
-                "Unexpected candidate application status"
+            actualStatus,
+            expectedStatus,
+            "Unexpected candidate application status"
         );
     }
 }

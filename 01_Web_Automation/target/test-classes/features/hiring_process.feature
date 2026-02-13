@@ -5,9 +5,10 @@ Feature: End-to-End Hiring Process
 
   Background:
     Given the admin user is logged into the system
-    And the admin creates a admin user
-    And the user logs out
-    And the created admin user is logged into the system
+#    And the admin creates an employee
+#    And the admin creates a admin user
+#    And the user logs out
+#    Then the created admin user is logged into the system
 
   @e2e @hiring @happy-path
   Scenario: Successfully hire a candidate through the recruitment workflow

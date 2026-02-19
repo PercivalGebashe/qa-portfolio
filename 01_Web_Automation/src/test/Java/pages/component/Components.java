@@ -1,13 +1,19 @@
 package pages.component;
 
+import core.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.DriverFactory;
+import pages.BasePage;
 
 import java.util.Map;
+
 import static java.util.Map.entry;
 
-public class Components {
+public class Components extends BasePage {
+
+    public Components(DriverManager driverManager){
+        super(driverManager);
+    }
 
     public By userDropdown = By.cssSelector(".oxd-userdropdown");
 
@@ -31,14 +37,23 @@ public class Components {
 
 
     public void clickTab(String tabName){
-        WebElement tab = DriverFactory.findBy(tabs.get(tabName.toLowerCase()));
-        DriverFactory.click(tab);
+        WebElement tab = findBy(tabs.get(tabName.toLowerCase()));
+        click(tab);
+    }
+    public void gotoAdmin(){
+        WebElement tab = findBy(tabs.get("admin"));
+        click(tab);
     }
 
     public void logout(){
-        WebElement profileIcon = DriverFactory.findBy(userDropdown);
-        DriverFactory.click(profileIcon);
-        WebElement logoutOptionEl = DriverFactory.findBy(logoutOption);
-        DriverFactory.click(logoutOptionEl);
+        WebElement profileIcon = findBy(userDropdown);
+        click(profileIcon);
+        WebElement logoutOptionEl = findBy(logoutOption);
+        click(logoutOptionEl);
+    }
+
+    public void gotoRecruitment() {
+        WebElement tab = findBy(tabs.get("recruitment"));
+        click(tab);
     }
 }

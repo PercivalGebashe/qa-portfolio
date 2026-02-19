@@ -3,7 +3,6 @@ package utils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import context.TestRunContext;
 
-import java.io.File;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 

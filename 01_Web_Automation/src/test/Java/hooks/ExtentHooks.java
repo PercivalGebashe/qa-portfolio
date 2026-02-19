@@ -1,8 +1,12 @@
 package hooks;
 
-import com.aventstack.extentreports.*;
-import io.cucumber.java.*;
-import utils.*;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import utils.ExtentManager;
+import utils.ExtentTestManager;
 
 public class ExtentHooks {
 

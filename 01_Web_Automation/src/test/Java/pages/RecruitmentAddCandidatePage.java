@@ -1,13 +1,15 @@
 package pages;
 
+import core.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import testdata.Candidate;
-import utils.DriverFactory;
 
-public class RecruitmentAddCandidatePage {
+public class RecruitmentAddCandidatePage extends BasePage implements LoadablePage{
+
+    @FindBy(xpath = "//h6[normalize-space()='Add Candidate']")
+    private WebElement pageHeading;
 
     @FindBy(xpath = "//form//input[@name = 'firstName']")
     private WebElement inputTextFieldFirstName;
@@ -25,22 +27,30 @@ public class RecruitmentAddCandidatePage {
     private WebElement buttonSaveCandidate;
 
 
-    public RecruitmentAddCandidatePage(){
-        PageFactory.initElements(DriverFactory.getDriver(), this);
+    public RecruitmentAddCandidatePage(DriverManager driverManager){
+        super(driverManager);
     }
 
     public void saveCandidate(Candidate candidate){
-        DriverFactory.type(inputTextFieldFirstName, candidate.getFirstName());
-        DriverFactory.type(inputTextFieldLastName, candidate.getLastName());
-        DriverFactory.click(selectButton);
-        DriverFactory.click(getSelectOption(candidate.getVacancyName()));
-        DriverFactory.type(inputTextFieldEmail, candidate.getEmail());
-        DriverFactory.submit(buttonSaveCandidate);
-
+        type(inputTextFieldFirstName, candidate.getFirstName());
+        type(inputTextFieldLastName, candidate.getLastName());
+        click(selectButton);
+        click(getSelectOption(candidate.getVacancyName()));
+        type(inputTextFieldEmail, candidate.getEmail());
+        click(buttonSaveCandidate);
     }
 
     private WebElement getSelectOption(String optionName){
-        return DriverFactory
-            .findBy(By.xpath("//form//div[@class='oxd-select-option'][normalize-space()='" + optionName + "']"));
+        return findBy(By.xpath("//form//div[@class='oxd-select-option'][normalize-space()='" + optionName + "']"));
+    }
+
+    @Override
+    public void waitUntilLoaded() {
+        waitForVisibilityOf(pageHeading);
+    }
+
+    @Override
+    public boolean isLoaded() {
+        return isDisplayed(pageHeading);
     }
 }

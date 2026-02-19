@@ -2,10 +2,12 @@ package listeners;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
+import core.DriverManager;
 import io.cucumber.plugin.ConcurrentEventListener;
 import io.cucumber.plugin.event.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import utils.ExtentTestManager;
-import utils.ScreenshotUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +15,6 @@ import java.util.Map;
 public class StepLogger implements ConcurrentEventListener {
 
     private final Map<String, Long> startTimes = new HashMap<>();
-
     @Override
     public void setEventPublisher(EventPublisher publisher) {
         publisher.registerHandlerFor(TestStepStarted.class, this::stepStarted);
@@ -42,7 +43,7 @@ public class StepLogger implements ConcurrentEventListener {
         try {
             if (status == Status.FAIL) {
 
-                String screenshot = ScreenshotUtils.captureBase64();
+                String screenshot = ((TakesScreenshot)DriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);
 
                 ExtentTestManager.getTest().log(
                         status,

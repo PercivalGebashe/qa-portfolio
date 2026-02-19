@@ -1,29 +1,27 @@
 package hooks;
 
-import context.TestRunContext;
+import core.DriverFactory;
+import core.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import utils.DriverFactory;
 
 public class Hooks {
 
-    private final TestRunContext testRunContext;
-
-    public Hooks(TestRunContext testRunContext){
-        this.testRunContext = testRunContext;
-    }
-
     @Before(order = 0)
     public void logReference(){
+
     }
 
     @Before(order = 1)
     public void setUp(){
-        DriverFactory.setDriver();
+        DriverManager.setDriver(DriverFactory.createDriver());
     }
 
     @After(order = 10)
     public void tearDown(){
-        DriverFactory.tearDownDriver();
+        if(DriverManager.getDriver() != null){
+            DriverManager.getDriver().quit();
+            DriverManager.removeDriver();
+        }
     }
 }

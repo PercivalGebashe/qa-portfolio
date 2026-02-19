@@ -1,87 +1,71 @@
 package context;
 
+import core.DriverManager;
 import pages.*;
 import pages.component.Components;
 
 public class TestContext {
 
-    public TestContext(){
+    private final DriverManager driverManager;
+
+    public TestContext(DriverManager driverManager){
+        this.driverManager = driverManager;
 
     }
 
     public LoginPage loginPage() {
-        return new LoginPage();
+        return new LoginPage(driverManager);
     }
 
     public AdminPage adminPage() {
-        return new AdminPage();
-    }
-
-    public AdminJobCategoriesPage jobCategoriesPage() {
-        return new AdminJobCategoriesPage();
-    }
-
-    public AdminAddJobCategoryPage addJobCategoryPage(){
-        return new AdminAddJobCategoryPage();
+        return new AdminPage(driverManager);
     }
 
     public AdminJobTitlesPage jobTitlesPage(){
-        return new AdminJobTitlesPage();
+        return new AdminJobTitlesPage(driverManager);
+    }
+
+    public BasePage basePage(){
+        return new BasePage(driverManager);
     }
 
     public AdminAddJobTitlePage addJobTitlePage(){
-        return new AdminAddJobTitlePage();
+        return new AdminAddJobTitlePage(driverManager);
     }
 
     public RecruitmentPage recruitmentPage(){
-        return new RecruitmentPage();
+        return new RecruitmentPage(driverManager);
     }
 
     public RecruitmentVacancyPage vacancyPage(){
-        return new RecruitmentVacancyPage();
+        return new RecruitmentVacancyPage(driverManager);
     }
 
     public RecruitmentAddVacancyPage addVacancyPage(){
-        return new RecruitmentAddVacancyPage();
+        return new RecruitmentAddVacancyPage(driverManager);
     }
 
     public RecruitmentCandidatesPage candidatesPage(){
-        return new RecruitmentCandidatesPage();
+        return new RecruitmentCandidatesPage(driverManager);
     }
 
     public RecruitmentAddCandidatePage addCandidatePage(){
-        return new RecruitmentAddCandidatePage();
+        return new RecruitmentAddCandidatePage(driverManager);
     }
 
-    public CandidateActionsPage candidateActionsPage(){
-        return new CandidateActionsPage();
+    public RecruitmentCandidateActionsPage candidateActionsPage(){
+        return new RecruitmentCandidateActionsPage(driverManager);
     }
 
     public Components components() {
-        return new Components();
+        return new Components(driverManager);
     }
 
-    public AdminAddUser addUserPage() {
-        return new AdminAddUser();
+    public DashboardPage dashboardPage() {
+        return new DashboardPage(driverManager);
     }
 
-    public AdminUserManagementPage userManagementPage() {
-        return new AdminUserManagementPage();
-    }
-
-    public PimPage pimPage() {
-        return new PimPage();
-    }
-
-    public PimAddEmployeePage addEmployeePage() {
-        return new PimAddEmployeePage();
-    }
-
-    public PimEmployeeListPage employeeListPage() {
-        return new PimEmployeeListPage();
-    }
-
-    public PimPersonalDetailsPage personDetailsPage() {
-        return new PimPersonalDetailsPage();
+    public RecruitmentChangeCandidateStatusPage changeCandidateStatusPage() {
+        return new RecruitmentChangeCandidateStatusPage(driverManager);
     }
 }

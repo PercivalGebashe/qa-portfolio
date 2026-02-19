@@ -1,12 +1,13 @@
 package pages;
 
-import org.openqa.selenium.By;
+import core.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import utils.DriverFactory;
 
-public class RecruitmentPage {
+public class RecruitmentPage extends BasePage implements LoadablePage{
+
+    @FindBy(xpath = "//h6[normalize-space()='Recruitment']")
+    private WebElement pageTitle;
 
     @FindBy(xpath = "//a[normalize-space()='Vacancies']")
     private WebElement vacancies;
@@ -17,20 +18,30 @@ public class RecruitmentPage {
     @FindBy(xpath = "//button[normalize-space()='Add']")
     private WebElement buttonAddCandidate;
 
-    public RecruitmentPage(){
-        PageFactory.initElements(DriverFactory.getDriver(), this);
+    @FindBy(xpath = "//span[contains(normalize-space(),'Records Found')]")
+    private WebElement recordsSpan;
+
+    public RecruitmentPage(DriverManager driverManager){
+        super(driverManager);
     }
 
 
     public void openVacancyPage() {
-        DriverFactory.click(vacancies);
+        click(vacancies);
     }
 
     public void openCandidatesPage(){
-        DriverFactory.click(candidates);
+        click(candidates);
     }
 
-    public void addCandidate(){
-        DriverFactory.click(buttonAddCandidate);
+    @Override
+    public void waitUntilLoaded() {
+        waitForVisibilityOf(pageTitle);
+        waitForVisibilityOf(recordsSpan);
+    }
+
+    @Override
+    public boolean isLoaded() {
+        return isDisplayed(pageTitle) && isDisplayed(recordsSpan);
     }
 }

@@ -1,11 +1,18 @@
 package pages;
 
+import core.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import utils.DriverFactory;
 
-public class AdminPage {
+import java.util.List;
+
+public class AdminPage extends BasePage implements LoadablePage{
+
+    @FindBy(xpath = "//h6[text()='Admin']")
+    private WebElement pageTitle;
+
+    @FindBy(xpath = "//span[contains(normalize-space(),'Records Found')]")
+    private WebElement recordsSpan;
 
     @FindBy(xpath = "//nav[@aria-label = 'Topbar Menu']//li[normalize-space()='User Management']")
     private WebElement userManagementMenu;
@@ -16,6 +23,9 @@ public class AdminPage {
     @FindBy(xpath = "//nav[@aria-label = 'Topbar Menu']//li[normalize-space()='Job']")
     private WebElement jobMenu;
 
+    @FindBy(xpath = "//ul[@class='oxd-dropdown-menu']//li")
+    private List<WebElement> JobMenuOptions;
+
     @FindBy(xpath = "//a[normalize-space()='Job Titles']")
     private WebElement jobTitles;
 
@@ -23,23 +33,40 @@ public class AdminPage {
     private WebElement jobCategories;
 
 
-    public AdminPage(){
-        PageFactory.initElements(DriverFactory.getDriver(), this);
+    public AdminPage(DriverManager driverManager){
+        super(driverManager);
     }
 
     public void openUserManagement(){
-        DriverFactory.click(userManagementMenu);
-        DriverFactory.click(users);
+        click(userManagementMenu);
+        click(users);
+    }
+
+    public void openJobMenu(){
+        click(jobMenu);
     }
 
     public void openJobTitle(){
-        DriverFactory.click(jobMenu);
-        DriverFactory.click(jobTitles);
+        click(jobTitles);
     }
 
     public void openJobCategories(){
-        DriverFactory.click(jobMenu);
-        DriverFactory.click(jobCategories);
+        click(jobMenu);
+        click(jobCategories);
     }
 
+    public boolean jobMenuOptionsDisplayed(){
+        return !findBy(JobMenuOptions).isEmpty();
+    }
+
+    @Override
+    public void waitUntilLoaded() {
+        waitForVisibilityOf(pageTitle);
+        waitForVisibilityOf(recordsSpan);
+    }
+
+    @Override
+    public boolean isLoaded() {
+        return isDisplayed(pageTitle) && isDisplayed(recordsSpan);
+    }
 }

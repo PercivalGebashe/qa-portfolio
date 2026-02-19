@@ -1,12 +1,14 @@
 package pages;
 
+import core.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import testdata.JobTitle;
-import utils.DriverFactory;
 
-public class AdminAddJobTitlePage {
+public class AdminAddJobTitlePage extends BasePage implements LoadablePage{
+
+    @FindBy(xpath = "//h6[normalize-space()='Add Job Title']")
+    private WebElement pageHeading;
 
     @FindBy(xpath = "//form//input")
     private WebElement inputTextFieldJobCategoryName;
@@ -14,12 +16,27 @@ public class AdminAddJobTitlePage {
     @FindBy(xpath = "//form//button[text()=' Save ']")
     private WebElement buttonSaveJobTitle;
 
-    public AdminAddJobTitlePage() {
-        PageFactory.initElements(DriverFactory.getDriver(), this);
+    @FindBy(xpath = "//div[contains(@class, 'oxd-toast--success')]")
+    private WebElement successMessage;
+
+    public AdminAddJobTitlePage(DriverManager driverManager) {
+        super(driverManager);
     }
 
     public void saveJobTitle(JobTitle title){
-        DriverFactory.type(inputTextFieldJobCategoryName, title.getJobTitle());
-        DriverFactory.click(buttonSaveJobTitle);
+        type(inputTextFieldJobCategoryName, title.getJobTitle());
+        click(buttonSaveJobTitle);
     }
+
+    @Override
+    public void waitUntilLoaded() {
+        waitForVisibilityOf(pageHeading);
+    }
+
+    @Override
+    public boolean isLoaded() {
+        return isDisplayed(pageHeading);
+    }
+
+
 }

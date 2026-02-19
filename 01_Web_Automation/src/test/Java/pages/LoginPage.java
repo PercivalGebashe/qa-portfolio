@@ -1,15 +1,14 @@
 package pages;
 
+import core.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import utils.DriverFactory;
 
 import java.util.List;
 import java.util.Objects;
 
-public class LoginPage{
+public class LoginPage extends BasePage{
 
     @FindBy(name = "username")
     private WebElement usernameField;
@@ -29,38 +28,18 @@ public class LoginPage{
     @FindBy(xpath = "//p[text()='Invalid credentials']")
     private WebElement errorMessage;
 
-    public LoginPage(){
-        PageFactory.initElements(DriverFactory.getDriver(), this);
-    }
-
-    public void enterUsername(String username){
-        DriverFactory.type(usernameField, username);
-    }
-
-    public void enterPassword(String password){
-        DriverFactory.type(passwordField, password);
-    }
-
-    public void submitLogin(){
-        DriverFactory.submit(submitButton);
+    public LoginPage(DriverManager driverManager){
+        super(driverManager);
     }
 
     public void login(String userName, String password){
-        enterUsername(userName);
-        enterPassword(password);
-        submitLogin();
+        isLoginFormVisible();
+        type(usernameField, userName);
+        type(passwordField, password);
+        click(submitButton);
     }
 
-    public boolean isValidationMessageDisplayed(){
-        return !requiredField.isEmpty();
-    }
-
-    public List<WebElement> getRequiredField(){
-        return requiredField;
-    }
-
-    public boolean isLoginFormVisible(){
-        return Objects.requireNonNull(DriverFactory.getWait()
-                .until(ExpectedConditions.visibilityOf(loginForm))).isDisplayed();
+    public void isLoginFormVisible(){
+        Objects.requireNonNull(wait.until(ExpectedConditions.visibilityOf(loginForm))).isDisplayed();
     }
 }

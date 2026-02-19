@@ -64,6 +64,7 @@ Utilities / TestRunContext / Test Data
 
 * Page Object Model (POM)
 * Driver Factory pattern 
+* Dependency Injection - Cucumber Pico Container
 * Data-driven testing with JSON 
 * Run-scoped test context 
 * State-based assertions
@@ -73,7 +74,7 @@ Utilities / TestRunContext / Test Data
 ## Framework Features
 
 * Page Object Model implementation 
-* Driver factory for browser management 
+* Driver factory for browser management
 * Run-scoped unique test reference generation 
 * JSON-based test data templates 
 * Domain object deserialization 
@@ -99,30 +100,33 @@ Utilities / TestRunContext / Test Data
 ## Project Structure
 
 ```css
-├───configuration
-├───reports
-│   └───extent
-├───screenshots
-├───src
-│   └───test
-│       ├───Java
-│       │   ├───context
-│       │   ├───hooks
-│       │   ├───pages
-│       │   │   └───component
-│       │   ├───runners
-│       │   ├───stepDefinitions
-│       │   ├───testdata
-│       │   └───utils
-│       └───resources
-│           ├───features
-│           └───testdata
-│               ├───adminUser
-│               ├───candidate
-│               ├───interview
-│               ├───jobCategory
-│               ├───jobTitle
-│               └───vacanc
+├───01_Web_Automation
+│   ├───configuration
+│   ├───reports
+│   │   └───extent
+│   ├───screenshots
+│   ├───src
+│   │   └───test
+│   │       ├───Java
+│   │       │   ├───context
+│   │       │   ├───core
+│   │       │   ├───hooks
+│   │       │   ├───listeners
+│   │       │   ├───pages
+│   │       │   │   └───component
+│   │       │   ├───runners
+│   │       │   ├───stepDefinitions
+│   │       │   ├───testdata
+│   │       │   └───utils
+│   │       └───resources
+│   │           ├───features
+│   │           └───testdata
+│   │               ├───adminUser
+│   │               ├───candidate
+│   │               ├───interview
+│   │               ├───jobCategory
+│   │               ├───jobTitle
+│   │               └───vacancy
 
 ```
 
@@ -325,8 +329,9 @@ The report includes:
 * Failure details 
 * Screenshot evidence for failed steps 
 * Execution timestamps
+* Execution time
 
-**Passing Test Full Sample [Report](reports/extent/extent-report_2026_02_13_15_28_14.html)**
+**Passing Test Full Sample [Report](reports/extent/extent-report.html)**
 
 
 <img src="screenshots/passing.png" alt="My image" width="400"/>

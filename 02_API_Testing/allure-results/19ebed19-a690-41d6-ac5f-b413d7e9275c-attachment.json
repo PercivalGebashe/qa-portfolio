@@ -1,0 +1,11 @@
+{
+    "firstname": "Nqobile",
+    "lastname": "Ntuli",
+    "totalprice": 4795,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2026-03-23",
+        "checkout": "2026-03-26"
+    },
+    "additionalneeds": "Lunch"
+}

@@ -119,3 +119,43 @@ Not Found
 2026-03-04 16:34:24 INFO  filter.AllureLoggingFilter - DELETE https://restful-booker.herokuapp.com/booking/1819 -> 201 (1462 ms)
 2026-03-04 16:34:26 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
 2026-03-04 16:34:26 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/1819 -> 404 (1511 ms)
+2026-03-04 16:44:16 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\perci\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-03-04 16:44:22 INFO  filter.AllureLoggingFilter - POST https://restful-booker.herokuapp.com/booking -> 200 (2456 ms)
+2026-03-04 16:44:24 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/2051 -> 200 (1645 ms)
+2026-03-04 16:44:26 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 16:44:26 INFO  filter.AllureLoggingFilter - PUT https://restful-booker.herokuapp.com/booking/2051 -> 403 (1463 ms)
+2026-03-04 16:47:59 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\perci\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-03-04 16:48:04 INFO  filter.AllureLoggingFilter - POST https://restful-booker.herokuapp.com/booking -> 200 (2370 ms)
+2026-03-04 16:48:06 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/3936 -> 200 (1474 ms)
+2026-03-04 16:48:08 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 16:48:08 INFO  filter.AllureLoggingFilter - PUT https://restful-booker.herokuapp.com/booking/3936 -> 403 (1465 ms)
+2026-03-04 16:50:02 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\perci\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-03-04 16:50:07 INFO  filter.AllureLoggingFilter - POST https://restful-booker.herokuapp.com/booking -> 200 (2427 ms)
+2026-03-04 16:50:10 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/5019 -> 200 (1557 ms)
+2026-03-04 16:50:11 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 16:50:11 INFO  filter.AllureLoggingFilter - PUT https://restful-booker.herokuapp.com/booking/5019 -> 403 (1542 ms)
+2026-03-04 16:51:34 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\perci\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-03-04 16:51:39 INFO  filter.AllureLoggingFilter - POST https://restful-booker.herokuapp.com/booking -> 200 (2424 ms)
+2026-03-04 16:51:41 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/645 -> 200 (1538 ms)
+2026-03-04 16:51:43 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 16:51:43 INFO  filter.AllureLoggingFilter - PUT https://restful-booker.herokuapp.com/booking/645 -> 403 (1454 ms)
+2026-03-04 16:57:18 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\perci\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-03-04 16:59:34 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\perci\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-03-04 16:59:41 INFO  filter.AllureLoggingFilter - POST https://restful-booker.herokuapp.com/booking -> 200 (1468 ms)
+2026-03-04 16:59:43 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/5253 -> 200 (1528 ms)
+2026-03-04 16:59:45 INFO  filter.AllureLoggingFilter - PUT https://restful-booker.herokuapp.com/booking/5253 -> 200 (1528 ms)
+2026-03-04 16:59:46 INFO  filter.AllureLoggingFilter - DELETE https://restful-booker.herokuapp.com/booking/5253 -> 201 (1461 ms)
+2026-03-04 16:59:48 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 16:59:48 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/5253 -> 404 (1514 ms)

@@ -14,11 +14,11 @@ public class AuthClient extends BaseClient{
 
     public Response createToken(){
 
-        String baseUrl = ConfigManager.get("base.url");
+        String baseUrl = ConfigManager.getBaseUrl();
 
         AuthRequest authRequest = new AuthRequest(
-                ConfigManager.get("auth.username"),
-                ConfigManager.get("auth.password")
+                ConfigManager.getAuthUsername(),
+                ConfigManager.getAuthPassword()
         );
 
         return given()

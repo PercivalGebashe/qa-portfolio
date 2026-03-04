@@ -59,7 +59,7 @@ public class BookingLifeCycleTest extends BaseTest {
         );
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, dependsOnMethods = "shouldCreateToken")
     public void shouldCreateBooking(){
 
         Response response = bookingClient.createBooking(bookingRequest);

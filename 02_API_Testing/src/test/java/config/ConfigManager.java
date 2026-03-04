@@ -9,16 +9,15 @@ public class ConfigManager {
     private static final Properties properties = new Properties();
 
     static {
-        String envValue = System.getProperty("env");
-        Environment env = Environment.from(envValue);
-
-        configLoader = new ConfigLoader(env);
-
         try (InputStream input =
                      ConfigManager.class.getClassLoader()
                              .getResourceAsStream("config.properties")) {
 
             properties.load(input);
+            String envValue = get("env");
+            System.out.println("System env: " + envValue);
+            Environment env = Environment.from(envValue);
+            configLoader = new ConfigLoader(env);
         } catch (Exception e) {
             throw new RuntimeException("Failed to load config", e);
         }

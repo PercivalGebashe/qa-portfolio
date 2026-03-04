@@ -8,6 +8,7 @@ public class ConfigLoader {
 
     public ConfigLoader(Environment env){
         String fileName = "config/" + env.name().toLowerCase() + ".properties";
+        System.out.println("File name: " + fileName);
 
         try (InputStream input =
                      getClass().getClassLoader().getResourceAsStream(fileName)) {

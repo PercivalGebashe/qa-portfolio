@@ -1,0 +1,121 @@
+2026-03-04 15:20:31 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\perci\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-03-04 15:20:39 INFO  filter.ConditionalLoggingFilter - ===== REQUEST =====
+2026-03-04 15:20:39 INFO  filter.ConditionalLoggingFilter - Method: POST
+2026-03-04 15:20:39 INFO  filter.ConditionalLoggingFilter - URI: https://restful-booker.herokuapp.com/booking
+2026-03-04 15:20:39 INFO  filter.ConditionalLoggingFilter - Body:
+{"firstname":"Michael","lastname":"Moodley","totalprice":3062,"depositpaid":true,"bookingdates":{"checkin":"2026-03-18","checkout":"2026-04-02"},"additionalneeds":"Dinner"}
+2026-03-04 15:20:39 INFO  filter.ConditionalLoggingFilter - ===== RESPONSE =====
+2026-03-04 15:20:39 INFO  filter.ConditionalLoggingFilter - Status: 200
+2026-03-04 15:20:39 INFO  filter.ConditionalLoggingFilter - Time: 1516 ms
+2026-03-04 15:20:39 INFO  filter.ConditionalLoggingFilter - Body:
+{
+    "bookingid": 100,
+    "booking": {
+        "firstname": "Michael",
+        "lastname": "Moodley",
+        "totalprice": 3062,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2026-03-18",
+            "checkout": "2026-04-02"
+        },
+        "additionalneeds": "Dinner"
+    }
+}
+2026-03-04 15:20:39 INFO  filter.ConditionalLoggingFilter - ====================
+2026-03-04 15:20:40 INFO  filter.ConditionalLoggingFilter - ===== REQUEST =====
+2026-03-04 15:20:40 INFO  filter.ConditionalLoggingFilter - Method: GET
+2026-03-04 15:20:40 INFO  filter.ConditionalLoggingFilter - URI: https://restful-booker.herokuapp.com/booking/100
+2026-03-04 15:20:40 INFO  filter.ConditionalLoggingFilter - ===== RESPONSE =====
+2026-03-04 15:20:40 INFO  filter.ConditionalLoggingFilter - Status: 200
+2026-03-04 15:20:40 INFO  filter.ConditionalLoggingFilter - Time: 1518 ms
+2026-03-04 15:20:40 INFO  filter.ConditionalLoggingFilter - Body:
+{
+    "firstname": "Michael",
+    "lastname": "Moodley",
+    "totalprice": 3062,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2026-03-18",
+        "checkout": "2026-04-02"
+    },
+    "additionalneeds": "Dinner"
+}
+2026-03-04 15:20:40 INFO  filter.ConditionalLoggingFilter - ====================
+2026-03-04 15:20:42 INFO  filter.ConditionalLoggingFilter - ===== REQUEST =====
+2026-03-04 15:20:42 INFO  filter.ConditionalLoggingFilter - Method: PUT
+2026-03-04 15:20:42 INFO  filter.ConditionalLoggingFilter - URI: https://restful-booker.herokuapp.com/booking/100
+2026-03-04 15:20:42 INFO  filter.ConditionalLoggingFilter - Body:
+{"firstname":"Sue","lastname":"Moodley","totalprice":4185,"depositpaid":true,"bookingdates":{"checkin":"2026-03-18","checkout":"2026-04-02"},"additionalneeds":"Dinner"}
+2026-03-04 15:20:42 INFO  filter.ConditionalLoggingFilter - ===== RESPONSE =====
+2026-03-04 15:20:42 INFO  filter.ConditionalLoggingFilter - Status: 200
+2026-03-04 15:20:42 INFO  filter.ConditionalLoggingFilter - Time: 1656 ms
+2026-03-04 15:20:42 INFO  filter.ConditionalLoggingFilter - Body:
+{
+    "firstname": "Sue",
+    "lastname": "Moodley",
+    "totalprice": 4185,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2026-03-18",
+        "checkout": "2026-04-02"
+    },
+    "additionalneeds": "Dinner"
+}
+2026-03-04 15:20:42 INFO  filter.ConditionalLoggingFilter - ====================
+2026-03-04 15:20:44 INFO  filter.ConditionalLoggingFilter - ===== REQUEST =====
+2026-03-04 15:20:44 INFO  filter.ConditionalLoggingFilter - Method: DELETE
+2026-03-04 15:20:44 INFO  filter.ConditionalLoggingFilter - URI: https://restful-booker.herokuapp.com/booking/100
+2026-03-04 15:20:44 INFO  filter.ConditionalLoggingFilter - ===== RESPONSE =====
+2026-03-04 15:20:44 INFO  filter.ConditionalLoggingFilter - Status: 201
+2026-03-04 15:20:44 INFO  filter.ConditionalLoggingFilter - Time: 1437 ms
+2026-03-04 15:20:44 INFO  filter.ConditionalLoggingFilter - Body:
+Created
+2026-03-04 15:20:44 INFO  filter.ConditionalLoggingFilter - ====================
+2026-03-04 15:20:45 INFO  filter.ConditionalLoggingFilter - ===== REQUEST =====
+2026-03-04 15:20:45 INFO  filter.ConditionalLoggingFilter - Method: GET
+2026-03-04 15:20:45 INFO  filter.ConditionalLoggingFilter - URI: https://restful-booker.herokuapp.com/booking/100
+2026-03-04 15:20:45 INFO  filter.ConditionalLoggingFilter - ===== RESPONSE =====
+2026-03-04 15:20:45 INFO  filter.ConditionalLoggingFilter - Status: 404
+2026-03-04 15:20:45 INFO  filter.ConditionalLoggingFilter - Time: 1524 ms
+2026-03-04 15:20:45 INFO  filter.ConditionalLoggingFilter - Body:
+Not Found
+2026-03-04 15:20:45 INFO  filter.ConditionalLoggingFilter - ====================
+2026-03-04 15:28:18 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\perci\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-03-04 15:28:26 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 15:28:26 INFO  filter.AllureLoggingFilter - POST https://restful-booker.herokuapp.com/booking -> 200 (1556 ms)
+2026-03-04 15:28:28 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 15:28:28 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/4075 -> 200 (1435 ms)
+2026-03-04 15:28:29 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 15:28:29 INFO  filter.AllureLoggingFilter - PUT https://restful-booker.herokuapp.com/booking/4075 -> 200 (1441 ms)
+2026-03-04 15:28:31 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 15:28:31 INFO  filter.AllureLoggingFilter - DELETE https://restful-booker.herokuapp.com/booking/4075 -> 201 (1455 ms)
+2026-03-04 15:28:33 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 15:28:33 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/4075 -> 404 (1549 ms)
+2026-03-04 15:46:59 INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\perci\AppData\Local\JetBrains\IdeaIC2025.2\temp-testng-customsuite.xml
+
+2026-03-04 15:47:09 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 15:47:09 INFO  filter.AllureLoggingFilter - POST https://restful-booker.herokuapp.com/booking -> 200 (1578 ms)
+2026-03-04 15:47:11 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 15:47:11 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/3482 -> 200 (1622 ms)
+2026-03-04 15:47:13 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 15:47:13 INFO  filter.AllureLoggingFilter - PUT https://restful-booker.herokuapp.com/booking/3482 -> 200 (1578 ms)
+2026-03-04 15:47:15 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 15:47:15 INFO  filter.AllureLoggingFilter - DELETE https://restful-booker.herokuapp.com/booking/3482 -> 201 (1571 ms)
+2026-03-04 15:47:17 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 15:47:17 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/3482 -> 404 (1586 ms)
+2026-03-04 16:34:19 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 16:34:19 INFO  filter.AllureLoggingFilter - POST https://restful-booker.herokuapp.com/booking -> 200 (1458 ms)
+2026-03-04 16:34:21 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 16:34:21 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/1819 -> 200 (1528 ms)
+2026-03-04 16:34:23 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 16:34:23 INFO  filter.AllureLoggingFilter - PUT https://restful-booker.herokuapp.com/booking/1819 -> 200 (1459 ms)
+2026-03-04 16:34:24 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 16:34:24 INFO  filter.AllureLoggingFilter - DELETE https://restful-booker.herokuapp.com/booking/1819 -> 201 (1462 ms)
+2026-03-04 16:34:26 INFO  filter.AllureLoggingFilter - Request/Response attached to Allure report.
+2026-03-04 16:34:26 INFO  filter.AllureLoggingFilter - GET https://restful-booker.herokuapp.com/booking/1819 -> 404 (1511 ms)

@@ -1,0 +1,4 @@
+Method: PUT
+URI: https://restful-booker.herokuapp.com/booking/1819
+Body:
+{"firstname":"Nicole","lastname":"James","totalprice":774,"depositpaid":true,"bookingdates":{"checkin":"2026-03-07","checkout":"2026-03-21"},"additionalneeds":"Breakfast"}

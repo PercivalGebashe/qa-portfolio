@@ -1,0 +1,2 @@
+Method: GET
+URI: https://restful-booker.herokuapp.com/booking/3482

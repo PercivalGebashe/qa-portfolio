@@ -1,3 +1,6 @@
-<listeners>
-    <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
-</listeners>
+<suite name="BookingLifeCycleTestsszc">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+</suite>

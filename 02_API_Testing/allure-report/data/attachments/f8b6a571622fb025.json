@@ -1,0 +1,11 @@
+{
+    "firstname": "Ally",
+    "lastname": "Stemmet",
+    "totalprice": 1997,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2026-03-17",
+        "checkout": "2026-03-19"
+    },
+    "additionalneeds": "Lunch"
+}

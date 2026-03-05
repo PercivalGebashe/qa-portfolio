@@ -1,0 +1,11 @@
+{
+    "firstname": "Buhle",
+    "lastname": "Ross",
+    "totalprice": 918,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2026-03-25",
+        "checkout": "2026-04-04"
+    },
+    "additionalneeds": "None"
+}

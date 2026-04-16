@@ -1,6 +1,6 @@
 # QA Portfolio by Percival Gebashe
 
-Welcome to my **Quality Assurance Portfolio** - a collection of projects showcasing my skills across manual, automation, API, mobile, performance, and CI/CD testing.
+Welcome to my **Quality Assurance Portfolio** - a collection of projects showcasing my skills across manual, automation, API, and CI/CD testing.
 
 ---
 
@@ -17,9 +17,8 @@ Welcome to my **Quality Assurance Portfolio** - a collection of projects showcas
 
 ## Tech Stack & Tools
 
-**Automation:** Selenium, TestNG, Cucumber  
-**API Testing:** Postman, Rest Assured  
-**Performance Testing:** JMeter  
+**Automation:** Selenium, Playwright, TestNG, Cucumber  
+**API Testing:** Postman, Rest Assured   
 **CI/CD:** Jenkins, GitHub Actions  
 **Reporting:** Allure, ExtentReports
 

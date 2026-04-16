@@ -10,7 +10,7 @@ Welcome to my **Quality Assurance Portfolio** - a collection of projects showcas
 |----|--------------------------------------------------|--------|-------------|
 | 1️ | [Web Automation Testing](./01_Web_Automation)    | Selenium, Java, TestNG, Cucumber | POM design, regression tests, reporting |
 | 2️ | [API Testing Framework](./02_API_Testing)        | Rest Assured / Postman | Schema validation, status codes, CI integration |
-| 3️ | [Performance Testing](./03_Performance_Testing)  | Apache JMeter | Load testing, response time graphs |
+| 3️ | [Automation Testing with Playwright](https://github.com/PercivalGebashe/Automation-Testing)  | Java, Playwright, TestNG, | POM design,regression tests, reporting, Input validation and error handling, API and network behaviour |
 | 4  | [CI/CD Pipeline Integration](./04_CICD_Pipeline) | Jenkins, GitHub Actions | Automated test runs, Allure reporting |
 
 ---
